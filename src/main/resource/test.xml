@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<forms>
+
+    <user desc="用户信息表">
+
+        <prop field="id" regex="id string"/>
+        <prop field="name" regex="name String"/>
+        <prop field="password" regex="password regex"/>
+
+    </user>
+
+</forms>
