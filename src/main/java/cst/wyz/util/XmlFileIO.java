@@ -1,11 +1,13 @@
 package cst.wyz.util;
 
+import cst.wyz.entity.User;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class XmlFileIO {
@@ -24,7 +26,7 @@ public class XmlFileIO {
         return new XmlFileIO(document);
     }
 
-    public String readDom(String prop){
+    public List<User> readDom(String prop){
         Element root = null;
 
         root = document.getRootElement();
@@ -33,7 +35,17 @@ public class XmlFileIO {
 
         List<Element> elements = element.elements("prop");
 
-        return elements.toString();
+        List<User> users = new ArrayList<>();
+
+        for(Element element1 : elements){
+            User user = new User();
+            user.setId(element1.attributeValue("id"));
+            user.setName(element1.attributeValue("name"));
+            user.setPassword(element1.attributeValue("password"));
+            users.add(user);
+        }
+
+        return users;
     }
 
 

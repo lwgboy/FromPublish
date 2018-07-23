@@ -4,9 +4,8 @@
 
     <user desc="用户信息表">
 
-        <prop field="id" regex="id string"/>
-        <prop field="name" regex="name String"/>
-        <prop field="password" regex="password regex"/>
+        <prop id="1001" name="wang" password="123"/>
+        <prop id="1002" name="zhu" password="123"/>
 
     </user>
 
